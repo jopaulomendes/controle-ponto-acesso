@@ -7,6 +7,10 @@ import java.time.LocalDateTime;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -32,12 +36,14 @@ public class Movimentacao {
 	}
 	
 	@EmbeddedId
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private MovimentacaoId id;
 	private LocalDateTime dataEntrada;
 	private LocalDateTime saidaEntrada;
 	private BigDecimal periodo;
-//	private Ocorrencia ocorrencia;
-//	private Calendario calendario;
+	@ManyToOne
+	private Ocorrencia ocorrencia;
+	@ManyToOne
+	private Calendario calendario;
 }

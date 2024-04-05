@@ -18,12 +18,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Builder
-//@Entity
+@Entity
 public class Calendario {
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String descricao;
 	private LocalDateTime dataEspecial;
+	@ManyToOne
 	private TipoData tipoData;
 }

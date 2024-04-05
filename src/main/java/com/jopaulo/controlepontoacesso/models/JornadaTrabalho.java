@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode
 @Builder
+//@Audited
 @Entity
 public class JornadaTrabalho {
 	@Id

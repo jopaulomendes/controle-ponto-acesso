@@ -21,20 +21,18 @@ import lombok.NoArgsConstructor;
 @Entity
 public class BancoHoras {
 	
+	@SuppressWarnings("serial")
 	@NoArgsConstructor
 	@AllArgsConstructor
 	@EqualsAndHashCode
 	@Embeddable
 	public class BancoHorasId implements Serializable{
-		private static final long serialVersionUID = 1L;
 		private Long idBancoHoras;
 		private Long idMovimentacao;
 		private Long idUsuario;
 	}
 	
 	@EmbeddedId
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private BancoHorasId id;
 	private LocalDateTime dataTrabalhada;
 	private BigDecimal quantidadeHoras;
